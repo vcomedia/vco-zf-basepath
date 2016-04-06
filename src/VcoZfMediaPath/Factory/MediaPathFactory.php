@@ -7,6 +7,7 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 
 class MediaPathFactory implements FactoryInterface {
 
+    
     /**
      * Create service
      *
