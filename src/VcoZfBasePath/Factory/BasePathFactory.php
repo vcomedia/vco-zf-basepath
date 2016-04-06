@@ -1,5 +1,5 @@
 <?php
-namespace VcoZfMinify\Factory;
+namespace VcoZfBasePath\Factory;
 
 use VcoZfMinify\View\Helper\BasePath;
 use Zend\ServiceManager\FactoryInterface;
