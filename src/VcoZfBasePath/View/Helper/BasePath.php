@@ -22,14 +22,8 @@ class BasePath extends BasePathOriginal {
     
     private $config;
     
-    /**
-     * Constructor
-     *
-     * @param
-     */
-    public function __construct($config) {
+    public function setConfig($config) {
         $this->config = $config;
-        parent::__construct();
     }
     
     /**

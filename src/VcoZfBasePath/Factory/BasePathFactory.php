@@ -17,7 +17,8 @@ class BasePathFactory implements FactoryInterface {
     public function createService (ServiceLocatorInterface $serviceLocator) {
         $realServiceLocator = $serviceLocator->getServiceLocator();
         $config = $realServiceLocator->get('Config');
-
-        return new BasePath($config['VcoZfBasePath']);
+        $basePath = new BasePath();
+        $basePath->setConfig($config['VcoZfBasePath']);
+        return $basePath;
     }
 }
