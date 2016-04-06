@@ -12,6 +12,7 @@
 namespace VcoZfBasePath\View\Helper;
 
 use Zend\View\Helper\BasePath as BasePathOriginal;
+use Zend\View\Exception\RuntimeException;
 
 /**
  * Class BasePath
@@ -39,7 +40,7 @@ class BasePath extends BasePathOriginal {
     {
         if (null === $this->basePath)
         {
-            throw new \Exception\RuntimeException('No base path provided');
+            throw new RuntimeException('No base path provided');
         }
 
         if (null !== $file) {
