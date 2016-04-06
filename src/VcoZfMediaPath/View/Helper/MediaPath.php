@@ -24,6 +24,7 @@ class MediaPath extends AbstractHelper {
     
     private $config;
     
+    
     public function setConfig($config) {
         $this->config = $config;
     }
@@ -39,43 +40,47 @@ class MediaPath extends AbstractHelper {
      */
     public function __invoke($file = null)
     {
-        if (null === $this->basePath)
-        {
-            throw new RuntimeException('No base path provided');
-        }
-
-        if (null !== $file) {
-            $file = '/' . ltrim($file, '/');
-        }
+        $basePath = $this->view->basePath($file);
+        $basePathBase = rtrim(substr($basePath, 0, -1 * strlen($file)), '/');
         
         //cache buster logic
         $cacheBasePathMatch = false;
         foreach($this->config['cacheBusterOptions']['basePaths'] as $cacheBasePath) {
             $cacheBasePath = '/' . trim($cacheBasePath, '/');
             $cacheBasePath = $cacheBasePath === '/' ? $cacheBasePath : $cacheBasePath . '/';
-            if(strrpos($file, $cacheBasePath, -strlen($file)) !== false) {
+            $cacheBasePath = $basePathBase . $cacheBasePath;
+            if(strrpos($basePath, $cacheBasePath, -strlen($basePath)) !== false) {
                $cacheBasePathMatch = true;
             }
         }
         
-        $fileDiskPath = getcwd() . '/' . trim($this->config['docRoot'], '/') . $file;
-        $filePathInfo = pathinfo($file);
-        if($this->config['cacheBusterOptions']['enabled'] === true && $cacheBasePathMatch && !empty($filePathInfo['extension']) && !empty($filePathInfo['filename']) && !empty($filePathInfo['basename']) 
-            && in_array($filePathInfo['extension'], $this->config['cacheBusterOptions']['extensions']) && $fileModificationTime = filemtime($fileDiskPath)
+        $fileDiskPath = getcwd() . '/' . trim($this->config['docRoot'], '/') . $basePath;
+        $basePathInfo = pathinfo($basePath);
+        if($this->config['cacheBusterOptions']['enabled'] === true && $cacheBasePathMatch && !empty($basePathInfo['extension']) && !empty($basePathInfo['filename']) && !empty($basePathInfo['basename']) 
+            && in_array($basePathInfo['extension'], $this->config['cacheBusterOptions']['extensions']) && $fileModificationTime = filemtime($fileDiskPath)
           ){
             $final = array(
-                $filePathInfo['filename'],
+                $basePathInfo['filename'],
                 $fileModificationTime,
-                $filePathInfo['extension'],
+                $basePathInfo['extension'],
             );
-            $file = str_replace($filePathInfo['basename'], implode('.', $final), $file);
+            $basePath = str_replace($basePathInfo['basename'], implode('.', $final), $basePath);
         }
         
         //cdn logic
         if($this->config['cdnOptions']['enabled'] === true) {
-            return $this->config['cdnOptions']['defaultDomain']['http'] . $this->basePath . $file;  
+            $httpsCdn = rtrim($this->config['cdnOptions']['defaultDomain']['https'], '/'); 
+            $httpCdn = rtrim($this->config['cdnOptions']['defaultDomain']['http'], '/'); 
+            
+            if(isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] == 'on' && !empty($httpsCdn)) {
+                return $httpsCdn . $basePath;  
+            } else if(isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] == 'on' && empty($this->config['cdnOptions']['defaultDomain']['https'])) {
+                return $basePath;  
+            } else {
+                return $httpCdn . $basePath;    
+            }
         } else {
-            return $this->basePath . $file;   
+            return $basePath;   
         }
     }
     
