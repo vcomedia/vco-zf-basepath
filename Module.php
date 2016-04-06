@@ -13,7 +13,6 @@ namespace VcoZfBasePath;
 
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\ViewHelperProviderInterface;
-use Zend\ModuleManager\Feature\ServiceProviderInterface;
 
 /**
  * Class Module
@@ -23,7 +22,7 @@ use Zend\ModuleManager\Feature\ServiceProviderInterface;
  * @package VcoZfBasePath
  */
 
-class Module implements ConfigProviderInterface, ViewHelperProviderInterface, ServiceProviderInterface {
+class Module implements ConfigProviderInterface, ViewHelperProviderInterface {
 
     /**
      * @return array
