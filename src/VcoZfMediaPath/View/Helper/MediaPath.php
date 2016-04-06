@@ -24,6 +24,7 @@ class MediaPath extends AbstractHelper {
     
     private $config;
     
+    
     public function setConfig($config) {
         $this->config = $config;
     }
