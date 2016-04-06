@@ -1,0 +1,25 @@
+{
+    "name": "vcomedia/vco-zf-basepath",
+    "description": "Zend Framework 2 basePath view helper wrappers",
+    "type": "library",
+    "homepage": "http://github.com/vcomedia/vco-zf-basepath",
+    "license": "MIT",
+    "keywords": [
+        "zf2",
+        "basepath"
+    ],
+    "authors": [
+        {
+            "name": "Vahag Dudukgian",
+            "email": "vahag@vcomedia.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "zendframework/zendframework": ">=2.2"
+    },
+    "autoload": {
+        "psr-0": {"VcoZfBasePath": "src/"},
+        "classmap": ["Module.php"]
+    }
+}
