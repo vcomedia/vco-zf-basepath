@@ -38,10 +38,10 @@ class MediaPath extends AbstractHelper {
      * @throws Exception\RuntimeException
      * @return string
      */
-    public function __invoke($file = null)
+    public function __invoke($file = null, $basePathWrapper = true)
     {
-        $basePath = $this->view->basePath($file);
-        $basePathBase = rtrim(substr($basePath, 0, -1 * strlen($file)), '/');
+        $basePath = $basePathWrapper ? $this->view->basePath($file) : '/' . ltrim($file, '/');
+        $basePathBase = $basePathWrapper ? rtrim(substr($basePath, 0, -1 * strlen($file)), '/') : '';
         
         //cache buster logic
         $cacheBasePathMatch = false;
