@@ -13,21 +13,41 @@ namespace VcoZfBasePath;
 
 return array(
     'VcoZfBasePath' => array(
-        'cdn' => '',
-        'enabled' => false,
-        'cacheBusterBasePaths' => array(
-            '/skin/',
-            '/js/',
-            '/scripts/',
-            '/css/',
-            '/stylesheets/',
-            '/media/',
-            '/uploads/',
-            '/images/',
-            '/img/',
-            '/imgs/',
-            '/cache/',
-            '/fonts/'
+        'docRoot' => '/public',
+        'cdnOptions' => array(
+            'enabled' => false,
+            'defaultDomain' => array(
+                'http' => '',
+                'https' => ''
+            )
+        ),
+        'cacheBusterOptions' => array(
+            'enabled' => false,
+            'basePaths' => array(
+                '/skin/',
+                '/js/',
+                '/scripts/',
+                '/css/',
+                '/stylesheets/',
+                '/media/',
+                '/uploads/',
+                '/images/',
+                '/img/',
+                '/imgs/',
+                '/cache/',
+                '/fonts/'
+            ),
+           'extensions' => array(
+                'js',
+                'css',
+                'jpg',
+                'jpeg',
+                'gif',
+                'png',
+                'ttf',
+                'woff',
+                'pdf'
+            )            
         )
     )
 );
