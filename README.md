@@ -1,4 +1,4 @@
-Zend Framework 2 Cachebuster
+Zend Framework 2 MediaPath View Helper for Cachebusting and Serving Content From CDN's
 ===================
 
 ZF2 Cachebuster is a cache buster module closely modeled after https://github.com/gordonknoppe/magento-cachebuster.  It facilitates automatic purging of static assets from HTTP caches such as browser cache, CDN, Varnish, etc using best practices outlined within the HTML5 boilerplate community.
