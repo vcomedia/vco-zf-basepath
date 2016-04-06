@@ -6,20 +6,21 @@
  * @package  VcoZfMediaPath
  * @author   Vahag Dudukgian (valeeum)
  * @license  http://opensource.org/licenses/MIT The MIT License (MIT)
- * @link     http://github.com/vcomedia/vco-zf-minify/
+ * @link     http://github.com/vcomedia/vco-zf-mediapath/
  */
 
 namespace VcoZfMediaPath\View\Helper;
 
 use Zend\View\Helper\BasePath;
 use Zend\View\Exception\RuntimeException;
+use Zend\View\Helper\AbstractHelper;
 
 /**
  * Class BasePath
  *
  * @package VcoZfMediaPath\View\Helper
  */
-class MediaPath {
+class MediaPath extends AbstractHelper {
     
     private $config;
     

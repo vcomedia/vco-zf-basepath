@@ -6,7 +6,7 @@
  * @package  VcoZfMediaPath
  * @author   Vahag Dudukgian (valeeum)
  * @license  http://opensource.org/licenses/MIT The MIT License (MIT)
- * @link     http://github.com/vcomedia/vco-zf-minify/
+ * @link     http://github.com/vcomedia/vco-zf-mediapath/
  */
 
 namespace VcoZfMediaPath;
