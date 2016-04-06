@@ -6,12 +6,6 @@ ZF2 Cachebuster is a cache buster module closely modeled after https://github.co
 See section "Filename-based cache busting" in:
 https://github.com/h5bp/server-configs-apache/blob/2.14.0/dist/.htaccess#L968
 
-URLs affected:
-
-* /js/ 
-* /media/
-* /skin/
-
 ## Overview
 
 The module provides cachebusting by automatically altering the URI created by Magento for static files by adding the timestamp of the file to the filename:
