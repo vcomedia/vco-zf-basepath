@@ -1,1 +1,1 @@
-# vco-zf-basepath
+# vco-zf-mediapath

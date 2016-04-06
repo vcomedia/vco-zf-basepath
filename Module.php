@@ -1,15 +1,15 @@
 <?php
 /**
- * VcoZfBasePath - Zend Framework 2 basePath view helper wrapper.
+ * VcoZfMediaPath - Zend Framework 2 basePath view helper wrapper.
  *
  * @category Module
- * @package  VcoZfBasePath
+ * @package  VcoZfMediaPath
  * @author   Vahag Dudukgian (valeeum)
  * @license  http://opensource.org/licenses/MIT The MIT License (MIT)
  * @link     http://github.com/vcomedia/vco-zf-minify/
  */
 
-namespace VcoZfBasePath;
+namespace VcoZfMediaPath;
 
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\ViewHelperProviderInterface;
@@ -19,7 +19,7 @@ use Zend\ModuleManager\Feature\ViewHelperProviderInterface;
  *
  * @see ConfigProviderInterface
  * @see ViewHelperProviderInterface
- * @package VcoZfBasePath
+ * @package VcoZfMediaPath
  */
 
 class Module implements ConfigProviderInterface, ViewHelperProviderInterface {
@@ -49,7 +49,7 @@ class Module implements ConfigProviderInterface, ViewHelperProviderInterface {
     {
         return array(
             'factories' => array(
-                'basepath' => 'VcoZfBasePath\Factory\BasePathFactory'
+                'mediapath' => 'VcoZfMediaPath\Factory\MediaPathFactory'
             )
         );
     }

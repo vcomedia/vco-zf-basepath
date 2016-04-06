@@ -1,8 +1,8 @@
 {
-    "name": "vcomedia/vco-zf-basepath",
-    "description": "Zend Framework 2 basePath view helper wrappers",
+    "name": "vcomedia/vco-zf-mediapath",
+    "description": "Zend Framework 2 basePath view helper wrapper.",
     "type": "library",
-    "homepage": "http://github.com/vcomedia/vco-zf-basepath",
+    "homepage": "http://github.com/vcomedia/vco-zf-mediapath",
     "license": "MIT",
     "keywords": [
         "zf2",
@@ -19,7 +19,7 @@
         "zendframework/zendframework": ">=2.2"
     },
     "autoload": {
-        "psr-0": {"VcoZfBasePath": "src/"},
+        "psr-0": {"VcoZfMediaPath": "src/"},
         "classmap": ["Module.php"]
     }
 }

@@ -1,18 +1,18 @@
 <?php
 /**
- * VcoZfBasePath - Zend Framework 2 basePath view helper wrapper.
+ * VcoZfMediaPath - Zend Framework 2 basePath view helper wrapper.
  *
  * @category Module
- * @package  VcoZfBasePath
+ * @package  VcoZfMediaPath
  * @author   Vahag Dudukgian (valeeum)
  * @license  http://opensource.org/licenses/MIT The MIT License (MIT)
  * @link     http://github.com/vcomedia/vco-zf-minify/
  */
 
-namespace VcoZfBasePath;
+namespace VcoZfMediaPath;
 
 return array(
-    'VcoZfBasePath' => array(
+    'VcoZfMediaPath' => array(
         'docRoot' => '/public',
         'cdnOptions' => array(
             'enabled' => false,

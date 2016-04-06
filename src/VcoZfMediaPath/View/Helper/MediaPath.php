@@ -1,25 +1,25 @@
 <?php
 /**
- * VcoZfBasePath - Zend Framework 2 basePath view helper wrapper.
+ * VcoZfMediaPath - Zend Framework 2 basePath view helper wrapper.
  *
  * @category Module
- * @package  VcoZfBasePath
+ * @package  VcoZfMediaPath
  * @author   Vahag Dudukgian (valeeum)
  * @license  http://opensource.org/licenses/MIT The MIT License (MIT)
  * @link     http://github.com/vcomedia/vco-zf-minify/
  */
 
-namespace VcoZfBasePath\View\Helper;
+namespace VcoZfMediaPath\View\Helper;
 
-use Zend\View\Helper\BasePath as BasePathOriginal;
+use Zend\View\Helper\BasePath;
 use Zend\View\Exception\RuntimeException;
 
 /**
  * Class BasePath
  *
- * @package VcoZfBasePath\View\Helper
+ * @package VcoZfMediaPath\View\Helper
  */
-class BasePath extends BasePathOriginal {
+class MediaPath {
     
     private $config;
     

@@ -1,11 +1,11 @@
 <?php
-namespace VcoZfBasePath\Factory;
+namespace VcoZfMediaPath\Factory;
 
-use VcoZfBasePath\View\Helper\BasePath;
+use VcoZfMediaPath\View\Helper\MediaPath;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
-class BasePathFactory implements FactoryInterface {
+class MediaPathFactory implements FactoryInterface {
 
     /**
      * Create service
@@ -17,8 +17,8 @@ class BasePathFactory implements FactoryInterface {
     public function createService (ServiceLocatorInterface $serviceLocator) {
         $realServiceLocator = $serviceLocator->getServiceLocator();
         $config = $realServiceLocator->get('Config');
-        $basePath = new BasePath();
-        $basePath->setConfig($config['VcoZfBasePath']);
-        return $basePath;
+        $mediaPath = new MediaPath();
+        $mediaPath->setConfig($config['VcoZfMediaPath']);
+        return $mediaPath;
     }
 }
