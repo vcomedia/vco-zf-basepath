@@ -1,7 +1,7 @@
 <?php
 namespace VcoZfBasePath\Factory;
 
-use VcoZfMinify\View\Helper\BasePath;
+use VcoZfBasePath\View\Helper\BasePath;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
