@@ -38,7 +38,7 @@ class BasePath extends BasePathOriginal {
     public function __invoke($file = null)
     {
         if (null === $this->basePath) {
-            throw new Exception\RuntimeException('No base path provided');
+            throw new \Exception\RuntimeException('No base path provided');
         }
 
         if (null !== $file) {
