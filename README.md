@@ -144,7 +144,7 @@ So essentially, how the above would work is that any request to http://cdn.domai
 
 This will at the very least restrict duplicate content issues to static files.  
 
-#TODO: Create instructions for minimizing duplicate content for static files
+TODO: Create instructions for minimizing duplicate content for static files
 
 ## License
 
