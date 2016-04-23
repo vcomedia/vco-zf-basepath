@@ -142,6 +142,9 @@ For nginx you will need to add a rule like the following to your site definition
 
 So essentially, how the above would work is that any request to http://cdn.domain.com/css/*, /js/*, etc; it will go to your origin appropriately. If they try and go to "http://cdn.domain.com/notspecified/", that will only match the Default Cache Behavior (*) which will then point them to the 403 page you have created. That should make it so anything that crawls cdn.domain.com should only see your static content and nothing else if it wasn't specified in your Cache Behavior path patterns.
 
+This will at the very least restrict duplicate content issues to static files.  
+
+#TODO: Create instructions for minimizing duplicate content for static files
 
 ## License
 
