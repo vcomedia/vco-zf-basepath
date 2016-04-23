@@ -65,8 +65,8 @@ return array(
         'cdnOptions' => array(
             'enabled' => true,
             'defaultDomain' => array(
-                'http' => 'http://cdn.getpaidlaw.com',
-                'https' => 'http://cdn.getpaidlaw.com'
+                'http' => 'http://cdn.domain.com',
+                'https' => 'http://cdn.domain.com'
             )
         ),
         'cacheBusterOptions' => array(
@@ -136,9 +136,9 @@ For nginx you will need to add a rule like the following to your site definition
      - For "/css" you would create a Cache Behavior path pattern of "css/*" 
      - For "/js" you would create a Cache Behavior path pattern of "js/*"
      - etc.
-     - For each of those Cache Behaviors, you would then want to make sure that the Origin you specify is for "getpaidlaw.com". 
-     - That way, any request for "http://cdn.getpaidlaw.com/css/*" etc will be similar to making a request to "http://getpaidlaw.com/css/*"
-3. Then for the Default Cache Behavior (*), you can point that to the second origin you had created. Following the example from Step 1, that origin would be "getpaidlaw.com/403.html". 
+     - For each of those Cache Behaviors, you would then want to make sure that the Origin you specify is for "domain.com". 
+     - That way, any request for "http://cdn.domain.com/css/*" etc will be similar to making a request to "http://domain.com/css/*"
+3. Then for the Default Cache Behavior (*), you can point that to the second origin you had created. Following the example from Step 1, that origin would be "domain.com/403.html". 
 
 So essentially, how the above would work is that any request to http://cdn.domain.com/css/*, /js/*, etc; it will go to your origin appropriately. If they try and go to "http://cdn.domain.com/notspecified/", that will only match the Default Cache Behavior (*) which will then point them to the 403 page you have created. That should make it so anything that crawls cdn.domain.com should only see your static content and nothing else if it wasn't specified in your Cache Behavior path patterns.
 
