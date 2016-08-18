@@ -57,7 +57,7 @@ class MediaPath extends AbstractHelper {
         $fileDiskPath = getcwd() . '/' . trim($this->config['docRoot'], '/') . $basePath;
         $basePathInfo = pathinfo($basePath);
         if($this->config['cacheBusterOptions']['enabled'] === true && $cacheBasePathMatch && !empty($basePathInfo['extension']) && !empty($basePathInfo['filename']) && !empty($basePathInfo['basename']) 
-            && in_array($basePathInfo['extension'], $this->config['cacheBusterOptions']['extensions']) && $fileModificationTime = filemtime($fileDiskPath)
+            && in_array($basePathInfo['extension'], $this->config['cacheBusterOptions']['extensions']) && $fileModificationTime = @filemtime($fileDiskPath)
           ){
             $final = array(
                 $basePathInfo['filename'],
